@@ -1,0 +1,11 @@
+:root{
+   --main-font:"Roboto",sans-serif;
+   --second-font:"Raleway",sans-serif;
+   --color-primary:#212121;
+   --color-primary-light: #757575;
+   --color-accent: #FFFFFF;
+   --main-background-color:#2F303A;
+   --second-background-color:#F5F4FA;
+   --main-text-size:44px;
+   --second-text-size:36px;
+}
