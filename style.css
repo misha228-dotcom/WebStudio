@@ -9,3 +9,8 @@
    --main-text-size:44px;
    --second-text-size:36px;
 }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+}
