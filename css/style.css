@@ -83,6 +83,10 @@ display: flex;
   gap: 30px;
 }
 
+.team-title{
+  text-align: center;
+}
+
 .team-name{
   text-align: center;
 }
@@ -98,4 +102,7 @@ display: flex;
 
 .footer-container{
   display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: flex-start;
 }
