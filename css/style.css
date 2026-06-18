@@ -4,6 +4,7 @@
    --color-primary:#212121;
    --color-primary-light: #757575;
    --color-accent: #FFFFFF;
+   --color-header-footer:#2196F3;
    --main-background-color:#2F303A;
    --second-background-color:#F5F4FA;
    --main-text-size:44px;
@@ -11,14 +12,11 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--main-font);
   line-height: 1.5;
 }
 
-.container,
-.header-container,
-.footer-container,
-.hero-container {
+.container{
     width: 1200px;
     padding: 0 15px;
     margin: 0 auto;
