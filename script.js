@@ -1,41 +1,28 @@
-const burgerBtn = document.getElementById("burger-btn");
+(() => {
+  const mobileMenu = document.querySelector('.js-menu-container');
+  const openMenuBtn = document.querySelector('.js-open-menu');
+  const closeMenuBtn = document.querySelector('.js-close-menu');
 
-const nav = document.querySelector(".header-nav");
+  const toggleMenu = () => {
+    const isMenuOpen =
+      openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
+    openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
+    mobileMenu.classList.toggle('is-open');
 
-const navLinks = document.querySelectorAll(".header_menu-link");
+    const scrollLockMethod = !isMenuOpen
+      ? 'disableBodyScroll'
+      : 'enableBodyScroll';
+    bodyScrollLock[scrollLockMethod](document.body);
+  };
 
-// Відкриття / закриття при кліку на кнопку
+  openMenuBtn.addEventListener('click', toggleMenu);
+  closeMenuBtn.addEventListener('click', toggleMenu);
 
-burgerBtn.addEventListener("click", () => {
-  nav.classList.toggle("is-open");
-
-  const isOpen = nav.classList.contains("is-open");
-
-  burgerBtn.setAttribute(
-    "aria-label",
-    isOpen ? "Закрити меню" : "Відкрити меню"
-  );
-});
-
-// Закриття при кліку на пункт меню
-
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    nav.classList.remove("is-open");
-
-    burgerBtn.setAttribute("aria-label", "Відкрити меню");
+  // Close the mobile menu on wider screens if the device orientation changes
+  window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
+    if (!e.matches) return;
+    mobileMenu.classList.remove('is-open');
+    openMenuBtn.setAttribute('aria-expanded', false);
+    bodyScrollLock.enableBodyScroll(document.body);
   });
-});
-
-// Закриття при кліку поза меню
-
-document.addEventListener("click", (e) => {
-  const isOutside =
-    !nav.contains(e.target) && !burgerBtn.contains(e.target);
-
-  if (isOutside) {
-    nav.classList.remove("is-open");
-
-    burgerBtn.setAttribute("aria-label", "Відкрити меню");
-  }
-});
+})();
