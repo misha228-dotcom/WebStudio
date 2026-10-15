@@ -59,6 +59,12 @@ body {
     display: none;    
 }
 
+.header_contacts-icon{
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  fill: currentColor;
+}
 
 /* === МОБІЛЬНЕ МЕНЮ === */
 
@@ -190,11 +196,29 @@ li:not(:last-child)
 margin-bottom: 30px;
  
 }
-/* .features-item{
-width: 350px;
-} */
+.features-item::before{
+content: "";
+display: inline-block;
+width:100% ;
+height: 120px;
+background-image: url("../img/antenna.svg");
+background-repeat: no-repeat;
+background-position: center;
+background-color: #F5F4FA;
+margin-bottom: 30px;
 
+}
 
+.features-item:nth-child(2)::before{
+background-image: url("../img/clock.svg");
+}
+
+.features-item:nth-child(3)::before{
+background-image: url("../img/diagram.svg");
+}
+.features-item:nth-child(4)::before{
+background-image: url("../img/astronaut.svg");
+}
 .features-title{
   text-align: center;
   font-size:14px ;
@@ -439,7 +463,7 @@ margin-bottom: 30px;
   margin-top: 12px;
 
 }
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1440px) {
  .header-contacts{
     display: flex;
     flex-direction:column;
@@ -673,7 +697,7 @@ flex-wrap: wrap;
 }
 }
 
-    @media (min-width:1200px){
+    @media (min-width:1201px){
     
 .container{
     max-width:1200px;
