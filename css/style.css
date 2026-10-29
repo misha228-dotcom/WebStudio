@@ -147,9 +147,16 @@ body {
   text-align: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: linear-gradient(to right, #2F303A66, #2F303A66), url("../img/hero-mob.png");
+  background-image: linear-gradient(to right, #2F303A66, #2F303A66), url("../img/img-mob/hero-mob.png");
 }
-
+@media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: url("../img/img-mob/hero-mob2x.png");
+  }
+  }
 .hero-container {
   display: flex;
   flex-direction: column;
@@ -241,10 +248,13 @@ body {
 }
 
 /* === SERVICES === */
-.services {
+@media (max-width:1199px) {
+  .services {
   padding-bottom: 60px;
-  display: none;
+ display: none;
 }
+}
+
 
 .services-title {
   text-align: center;
@@ -253,7 +263,7 @@ body {
   font-weight: 700;
   line-height: 100%;
   letter-spacing: 3%;
-  padding-bottom: 30px;
+  
   color: var(--color-primary);
 }
 
@@ -508,8 +518,17 @@ body {
   .hero {
     padding: 200px 0;
     background-color: var(--main-background-color);
-    background-image: linear-gradient(to right, #2F303A66, #2F303A66), url("../img/hero-tab.png");
+    background-image: linear-gradient(to right, #2F303A66, #2F303A66), url("../img/img-tab/hero-tab.png");
   }
+  
+  @media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: url("../img/img-tab/hero-tab2x.png");
+  }
+}
 
   .hero-title {
     font-size: 26px;
@@ -548,7 +567,7 @@ body {
 
   .services {
     padding-bottom: 94px;
-    display: block;
+    display: none;
   }
 
   .services-title {
@@ -640,9 +659,17 @@ body {
 /* ========================================= */
 @media (min-width: 1200px) {
   .hero {
-    background-image: linear-gradient(to right, #2F303A66, #2F303A66), url("../img/hero-desk.png");
+    background-image: linear-gradient(to right, #2F303A66, #2F303A66), url("../img/img-desk/hero-desk.png");
   }
 
+  @media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: url("../img/img-desk/hero-desk2x.png");
+  }
+}
   .container {
     max-width: 1200px;
   }
@@ -681,6 +708,10 @@ body {
   .features-title,
   .features-text {
     max-width: 270px;
+  }
+
+  .services{
+    display: block;
   }
 
   .team-title {
